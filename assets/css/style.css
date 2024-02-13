@@ -7797,6 +7797,7 @@ footer.clean-footer.crev:before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: cover;
+  background-clip: text;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
