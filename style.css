@@ -1,25 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
 
-:root {
-	--main-white-color: #f2f2f2;
-	--main-black-color: black;
-	--main-purple-color: #9e89b8;
-}
-
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-}
-
-button {
-	background: none;
-	outline: none;
-	cursor: pointer;
-}
-
-ul {
-	list-style: none;
 }
 
 a {
@@ -27,106 +11,61 @@ a {
 	color: inherit;
 }
 
+.logo {
+	fill: currentColor;
+}
+
 body {
 	font: 24px/1.5 "Titillium+Web", sans-serif, "400";
-	/*IE FIX*/
-	/*display: flex;
-	flex-direction: column;*/
+  display: flex;
+  flex-direction: column;
 }
 
-/* CONTAINER
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: #FFFFFF;
+	}
+	.logo {
+		fill: #000000;
+	}
 }
 
-.wrapper > * {
-	padding: 20px;
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #202124;
+	}
+	.logo {
+		fill: #FFFFFF;
+	}
 }
 
-
-/* HEADER
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-header {
-	background: var(--main-white-color);
-}
-.page-header nav {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.page-header ul {
-	display: flex;
-	order: 1;
-	width: 100%;
-	margin-top: 15px;
+.container {  display: grid;
+  grid-template-columns: .1fr 1fr .1fr;
+  grid-template-rows: .1fr 1fr .1fr;
+  gap: 0em 0em;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    ". . ."
+    ". main ."
+    ". . .";
+  width: 100%;
+  height: 100vh;
 }
 
-.page-header ul li:not(:last-child) {
-	padding-right: 15px;
-}
-
-.page-header .cta-contact {
-	font-family: inherit;
-	font-size: 1.2rem;
-	padding: 5px 18px;
-	border: 1px solid;
-	border-radius: 5px;
-}
-
-
-/* MAIN
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	flex-grow: 1;
-	min-height: 350px;
-	background: var(--main-purple-color)
-		url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/city.jpg) no-repeat
-		center / cover;
-	background-blend-mode: luminosity;
-	color: var(--main-white-color);
-}
-
-.page-main div {
-	max-width: 500px;
-}
-
-.page-main h1 {
-	margin-bottom: 20px;
-}
-
-.page-main p + p {
-	margin-top: 10px;
+.main {
+  justify-self: center;
+  align-self: center;
+  grid-area: main;
+	width: 250px;
+  height: auto;
 }
 
 
-/* FOOTER
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-footer {
-	display: flex;
-	flex-direction: column-reverse;
-	background: var(--main-white-color);
-}
-
-.page-footer ul {
-	display: flex;
-	font-size: 1.5rem;
-	margin-bottom: 5px;
-}
-
-.page-footer ul li:not(:last-child) {
-	margin-right: 20px;
-}
-
-
-/* MQ
+/* RESIZE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media screen and (min-width: 550px) {
 	.page-header ul {
