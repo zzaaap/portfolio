@@ -24,7 +24,12 @@
 
 @font-face { 
   font-family: "titlefont"; 
-  src: url("../fonts/BasementGrotesque-BoldExpanded.woff"); 
+  src: url("../fonts/BasementGrotesque-BoldExpanded.woff");
+}
+
+@font-face { 
+  font-family: "LXIIGX"; 
+  src: url("../fonts/LXIIGX.tff");
 }
 
 body {
@@ -32,7 +37,7 @@ body {
   background-color: #1a1a1a;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-  font-family: 'titlefont';
+  font-family: 'LXIIGX';
   text-transform: uppercase;
   overflow-x: hidden !important;
 }
