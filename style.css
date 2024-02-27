@@ -63,37 +63,3 @@ body {
 	width: 250px;
   height: auto;
 }
-
-
-/* RESIZE
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media screen and (min-width: 550px) {
-	.page-header ul {
-		width: auto;
-		margin-top: 0;
-	}
-
-	.page-header .cta-contact {
-		order: 1;
-	}
-
-	.page-footer {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.page-footer ul {
-		margin-bottom: 0;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	body {
-		font-size: 18px;
-	}
-
-	.page-main {
-		padding-left: 90px;
-	}
-}
