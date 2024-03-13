@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
 
 :root {
-  --light: #FEFEFE;
-  --dark: #202124;
+  --bg-color: #FEFEFE;
+  --text-color: #202124;
   --h1-color: #7800FF;
   --gray: #44464C;
 }
@@ -11,22 +11,31 @@
 
 a { text-decoration: none; color: inherit; }
 
-.logo { fill: var(--dark); }
+.logo { fill: var(--text-color); }
 
 body {
   font: 24px/1.5 "Titillium+Web", sans-serif, "400";
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* Dark/Light Mode */
 @media (prefers-color-scheme: light) {
-  body { background-color: var(--light); }
-  .logo { fill: var(--dark); } }
-
+  :root {
+    --bg-color: #FEFEFE;
+    --text-color: #202124;
+    --gray: #D6D8DD;
+  }
+}
 @media (prefers-color-scheme: dark) {
-  body { background-color: var(--dark); }
-  .logo { fill: var(--light); } }
+  :root {
+    --bg-color: #202124;
+    --text-color: #FEFEFE;
+    --gray: #44464C;
+  }
+}
 
 /* Alignment Container */
 .container {
@@ -108,7 +117,7 @@ body {
   transform: rotate(-45deg);
 }
 
-.btn-close:hover:after, .btn-close:hover:before { background: var(--light); }
+.btn-close:hover:after, .btn-close:hover:before { background: var(--text-color); }
 
 .modal-wrapper {
   display: flex;
@@ -140,7 +149,7 @@ body {
   width: 950px;
   position: relative;
   margin: auto;
-  background: var(--dark);
+  background: var(--bg-color);
   border: 1px solid var(--gray);
   opacity: 0;
   filter: alpha(opacity=0);
@@ -186,7 +195,7 @@ body, input, textarea { font-family: "Poppins", sans-serif; }
   grid-template-columns: repeat(2, 1fr);
 }
 
-.contact-form { background-color: var(--dark); position: relative; }
+.contact-form { background-color: var(--bg-color); position: relative; }
 
 form {
   padding: 2.3rem 2.2rem;
@@ -196,7 +205,7 @@ form {
 }
 
 .title {
-  color: var(--light);
+  color: var(--text-color);
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
@@ -211,7 +220,7 @@ form {
   border: 1px solid var(--gray);
   background: none;
   padding: 0.6rem 1.2rem;
-  color: var(--light);
+  color: var(--text-color);
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
@@ -233,7 +242,7 @@ textarea.input {
   left: 15px;
   transform: translateY(-50%);
   padding: 0 0.4rem;
-  color: var(--light);
+  color: var(--text-color);
   font-size: 0.9rem;
   font-weight: 400;
   pointer-events: none;
@@ -246,10 +255,10 @@ textarea.input {
 
 .btn {
   padding: 0.6rem 1.3rem;
-  background-color: var(--light);
+  background-color: var(--text-color);
   border: 1px solid var(--gray);
   font-size: 0.95rem;
-  color: var(--dark);
+  color: var(--bg-color);
   line-height: 1;
   border-radius: 10px;
   outline: none;
@@ -260,7 +269,7 @@ textarea.input {
   margin-left: -50%;
 }
 
-.btn:hover { background-color: transparent; color: var(--light); }
+.btn:hover { background-color: transparent; color: var(--text-color); }
 
 .social-media {
   padding: 2rem 0 0 0;
@@ -277,7 +286,7 @@ textarea.input {
   border-radius: 10px;
   border : 1px solid var(--gray);
   background: transparent;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   line-height: 45px;
   margin-right: 0.5rem;
@@ -286,6 +295,8 @@ textarea.input {
 
 .social-icons a:hover {
   transform: scale(1.1);
+  border-color: var(--bg-color);
+  background-color: var(--gray);
 }
 
 .input-container span {
@@ -308,7 +319,7 @@ textarea.input {
   opacity: 0;
   transition: 0.2s;
   height: 5px;
-  background-color: var(--dark);
+  background-color: var(--bg-color);
   top: 50%;
   transform: translateY(-50%);
 }
@@ -324,9 +335,9 @@ textarea.input {
 
 .contact-info { padding: 2.3rem 2.2rem; position: relative; }
 
-.contact-info .title { color: var(--light); text-align: left; }
+.contact-info .title { color: var(--text-color); text-align: left; }
 
-.text { color: var(--light); margin: 1.5rem 0 2rem 0; font-size: 1.1rem; text-align: left; }
+.text { color: var(--text-color); margin: 1.5rem 0 2rem 0; font-size: 1.1rem; text-align: left; }
 
 /* Social Media Icons */
 .information {
@@ -337,7 +348,7 @@ textarea.input {
   font-size: 0.95rem;
 }
 
-.information i { color: var(--light); font-size: 1.5rem; line-height: 1.75; }
+.information i:before { color: var(--text-color); font-size: 1.5rem; line-height: 1.75; }
 
 @media (max-width: 850px) {
   .form { grid-template-columns: 1fr; }
