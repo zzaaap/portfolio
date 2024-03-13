@@ -73,7 +73,7 @@ body {
   border: none;
   background: none;
   cursor: pointer;
-  &:hover { svg { transform: scale(0.95); } }
+  &:hover { svg { transform: scale(0.92); } }
   svg { outline: none; transition: transform 0.175s ease-in-out; }
 }
 
