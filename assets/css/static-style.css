@@ -3,15 +3,15 @@
 :root {
   --bg-color: #FFFFFF;
   --text-color: #202124;
-  --h1-color: #7800FF;
-  --gray: #44464C;
+  --gray-color: #EDEEF1;
+  --h1-color: #22D68E;
 }
 
-* { padding: 0; margin: 0; box-sizing: border-box; }
+* { padding: 0; margin: 0; }
 
 a { text-decoration: none; color: inherit; }
 
-.logo { fill: var(--text-color); }
+.logo { fill: #000000; }
 
 body {
   font: 24px/1.5 "Titillium+Web", sans-serif, "400";
@@ -21,20 +21,27 @@ body {
   color: var(--text-color);
 }
 
+h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align: left; }
+
+
 /* Dark/Light Mode */
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #FEFEFE;
+    --bg-color: #FFFFFF;
     --text-color: #202124;
-    --gray: #D6D8DD;
+    --gray-color: #EDEEF1;
+    --h1-color: #22D68E;
   }
+  .logo{ fill: #000000; }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #202124;
-    --text-color: #FEFEFE;
-    --gray: #44464C;
+    --text-color: #BDC0C3;
+    --gray-color: #28292C;
+    --h1-color: #00FF99;
   }
+  .logo{ fill: #FFFFFF; }
 }
 
 /* Alignment Container */
@@ -57,8 +64,8 @@ body {
 }
 /* Logo Container*/
 .logo-cell {
-  justify-self: center;
-  align-self: center;
+  align-items: center;
+  justify-content: center;
   grid-area: main;
   width: 275px;
   height: 100px;
@@ -69,12 +76,17 @@ body {
 -------------------------------------------------- */
 #logobutton {
   height: 100px;
-  width: 250px;
+  width: 275px;
   border: none;
   background: none;
   cursor: pointer;
-  &:hover { svg { transform: scale(0.92); } }
-  svg { outline: none; transition: transform 0.175s ease-in-out; }
+}
+#logobutton:hover svg {
+  transform: scale(0.9);
+}
+#logobutton svg {
+  outline: none;
+  transition: transform 0.175s ease-in-out;
 }
 
 
@@ -84,11 +96,14 @@ body {
   cursor: pointer;
   position: relative;
   right: -5px;
-  top: 5px;
-  margin: 3px;
-  width: 20px;
-  height: 20px;
+  top: 10px;
+  margin: 0;
+  padding: 10px;
+  width: 15px;
+  height: 15px;
   float: right;
+  background-color: var(--gray-color);
+  border-radius: 20px;
 }
 
 .clear { clear: both; }
@@ -98,11 +113,11 @@ body {
   content: "";
   height: 2px;
   display: block;
-  background: var(--gray);
+  background: var(--text-color);
 }
 
 .btn-close::before {
-  margin-top: 12px;
+  margin-top: 7px;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -117,7 +132,7 @@ body {
   transform: rotate(-45deg);
 }
 
-.btn-close:hover:after, .btn-close:hover:before { background: var(--text-color); }
+.btn-close:hover:after, .btn-close:hover:before { background: var(--h1-color); }
 
 .modal-wrapper {
   display: flex;
@@ -149,16 +164,16 @@ body {
   width: 950px;
   position: relative;
   margin: auto;
-  background: var(--bg-color);
-  border: 1px solid var(--gray);
+  background: var(--gray-color);
+  border: 1px solid var(--gray-color);
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-transform: scale(0.7);
-  transform: scale(0.7);
+  -webkit-transform: scale(0.25);
+  transform: scale(0.25);
 }
 
 .modal-wrapper.open .modal {
@@ -166,7 +181,7 @@ body {
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
   transform: scale(1);
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 .content { text-align: center; }
@@ -180,25 +195,20 @@ body {
 
 /* Contact Form
 ---------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-
-body, input, textarea { font-family: "Poppins", sans-serif; }
 
 .form {
   width: 100%;
-  max-width: 900px;
-  background-color: inherit;
-  border-radius: 10px;
+  max-width: 950px;
   z-index: 1000;
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.contact-form { background-color: var(--bg-color); position: relative; }
+.contact-form { position: relative; }
 
 form {
-  padding: 2.3rem 2.2rem;
+  padding: 0;
   z-index: 10;
   overflow: hidden;
   position: relative;
@@ -217,23 +227,35 @@ form {
 .input {
   width: 100%;
   outline: none;
-  border: 1px solid var(--gray);
-  background: none;
+  border: 1px solid var(--gray-color);
+  background-color: var(--bg-color);
   padding: 0.6rem 1.2rem;
   color: var(--text-color);
-  font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   border-radius: 10px;
-  transition: 0.3s;
+  transition: 0.25s;
+}
+
+input:focus {
+  border: 1px dashed var(--h1-color);
 }
 
 textarea.input {
   padding: 0.8rem 1.2rem;
   min-height: 250px;
-  border-radius: 10px;
+  border-radius: 7px;
   resize: none;
   overflow-y: auto;
+}
+
+textarea.input:focus {
+  padding: 0.8rem 1.2rem;
+  min-height: 250px;
+  border-radius: 7px;
+  resize: none;
+  overflow-y: auto;
+  border: 1px dashed var(--h1-color);
 }
 
 .input-container label {
@@ -247,8 +269,7 @@ textarea.input {
   font-weight: 400;
   pointer-events: none;
   z-index: 1000;
-  transition: 0.5s;
-  opacity: 35%;
+  transition: 0.25s;
 }
 
 .input-container.textarea label { top: 1rem; transform: translateY(0); }
@@ -256,14 +277,14 @@ textarea.input {
 .btn {
   padding: 0.6rem 1.3rem;
   background-color: var(--text-color);
-  border: 1px solid var(--gray);
+  border: 2px solid var(--text-color);
   font-size: 0.95rem;
   color: var(--bg-color);
   line-height: 1;
   border-radius: 10px;
   outline: none;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.25s;
   margin: 0;
   width: 50%;
   margin-left: -50%;
@@ -271,32 +292,35 @@ textarea.input {
 
 .btn:hover { background-color: transparent; color: var(--text-color); }
 
-.social-media {
-  padding: 2rem 0 0 0;
+/* Social Media Icons */
+.icon {
+  width: 28px;
+  margin-right: 0.7rem;
 }
 
 .social-icons {
   display: flex;
-  margin-top: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .social-icons a {
   width: 45px;
   height: 45px;
   border-radius: 10px;
-  border : 1px solid var(--gray);
+  vertical-align: middle;
+  border : 1px solid var(--gray-color);
   background: transparent;
   color: var(--text-color);
   text-align: center;
-  line-height: 45px;
   margin-right: 0.5rem;
   transition: 0.3s;
 }
 
 .social-icons a:hover {
   transform: scale(1.1);
-  border-color: var(--bg-color);
-  background-color: var(--gray);
+  margin-top: -5px;
 }
 
 .input-container span {
@@ -339,16 +363,6 @@ textarea.input {
 
 .text { color: var(--text-color); margin: 1.5rem 0 2rem 0; font-size: 1.1rem; text-align: left; }
 
-/* Social Media Icons */
-.information {
-  display: flex;
-  color: #ff0000;
-  margin: 0.7rem 0;
-  align-items: center;
-  font-size: 0.95rem;
-}
-
-.information i:before { color: var(--text-color); font-size: 1.5rem; line-height: 1.75; }
 
 @media (max-width: 850px) {
   .form { grid-template-columns: 1fr; }

@@ -1,4 +1,5 @@
-// Pop-Up
+/* Pop-Up Animation for Contact Form
+---------------------------------------------------------- */
 $(document).ready(function() {
   
 	$('.btn-open').click(function() {
@@ -11,7 +12,8 @@ $(document).ready(function() {
   
 });
 
-// Contact Form
+/* Contact Form
+---------------------------------------------------------- */
 const inputs = document.querySelectorAll(".input");
 
 function focusFunc() {
@@ -30,3 +32,7 @@ inputs.forEach((input) => {
   input.addEventListener("focus", focusFunc);
   input.addEventListener("blur", blurFunc);
 });
+
+
+/* Marker styling
+---------------------------------------------------------- */
