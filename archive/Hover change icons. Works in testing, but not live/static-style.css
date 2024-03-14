@@ -23,14 +23,6 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 
 .logo { fill: #000000; }
 
-.hov-em:hover { color: #FFD43B; }
-.hov-be:hover { color: #1769FF; }
-.hov-ig:hover { color: #E1306C; }
-.hov-li:hover { color: #0A66C2; }
-.hov-gh:hover { color: #6E5494; }
-
-.icon-default { transition: opacity .3s, transform .3s; }
-
 /* Dark/Light Mode */
 @media (prefers-color-scheme: light) {
   :root {
@@ -298,37 +290,6 @@ textarea.input:focus {
 
 .btn:hover { background-color: transparent; color: var(--text-color); }
 
-/* Social Media Icons */
-.icon {
-  width: 28px;
-  margin-right: 0.7rem;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-.social-icons a {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
-  vertical-align: middle;
-  border : 1px solid var(--gray-color);
-  background: transparent;
-  color: var(--text-color);
-  text-align: center;
-  margin-right: 0.5rem;
-  transition: 0.3s;
-}
-
-.social-icons a:hover {
-  transform: scale(1.1);
-  margin-top: -5px;
-}
-
 .input-container span {
   position: absolute;
   top: 0;
@@ -349,7 +310,6 @@ textarea.input:focus {
   opacity: 0;
   transition: 0.2s;
   height: 5px;
-  background-color: var(--bg-color);
   top: 50%;
   transform: translateY(-50%);
 }
@@ -369,7 +329,65 @@ textarea.input:focus {
 
 .text { color: var(--text-color); margin: 1.5rem 0 2rem 0; font-size: 1.1rem; text-align: left; }
 
+/* Hover effects on Font Awesome
+---------------------------------------------------------- */
+.hov-em:hover { color: #FFD43B; }
+.hov-be:hover { color: #1769FF; }
+.hov-ig:hover { color: #E1306C; }
+.hov-li:hover { color: #0A66C2; }
+.hov-gh:hover { color: #653AC1; }
 
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 0.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  margin-top: -10px;
+}
+
+.toggle-icons { display: block; position: relative; }
+
+.toggle-icons .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity .25s ease-in;
+}
+
+.toggle-icons .icon-default { opacity: 1.0; }
+
+.toggle-icons .icon-hover { opacity: 0; }
+
+.toggle-icons:hover .icon-default,
+.toggle-icons:focus .icon-default {
+  opacity: 0;
+}
+
+.toggle-icons:hover .icon-hover,
+.toggle-icons:focus .icon-hover {
+  opacity: 1.0;
+}
+
+.toggle-icons { color: inherit; }
+
+.toggle-icons:not(:last-child) { margin-right: .25rem; }
+
+/* Media Queries Original
+---------------------------------------------------------- */
 @media (max-width: 850px) {
   .form { grid-template-columns: 1fr; }
   .contact-info:before { bottom: initial; top: -75px; right: 65px; transform: scale(0.95); }
