@@ -331,6 +331,12 @@ textarea.input:focus {
 
 /* Test
 ---------------------------------------------------------- */
+.hov-em:hover { color: #FFD43B; }
+.hov-be:hover { color: #1769FF; }
+.hov-ig:hover { color: #E1306C; }
+.hov-li:hover { color: #0A66C2; }
+.hov-gh:hover { color: #653AC1; }
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -339,6 +345,7 @@ textarea.input:focus {
 }
 
 .social-icons a {
+  position: relative; /* Add this line */
   width: 45px;
   height: 45px;
   border-radius: 10px;
@@ -352,44 +359,17 @@ textarea.input:focus {
   margin-top: -10px;
 }
 
-.hov-em:hover { color: #FFD43B; }
-.hov-be:hover { color: #1769FF; }
-.hov-ig:hover { color: #E1306C; }
-.hov-li:hover { color: #0A66C2; }
-.hov-gh:hover { color: #653AC1; }
-
-/* this is the link or the element that will contain the two icons we want to toggle between */
-.toggle-icons { display: block; position: relative; }
-
-/* general styling for both icons - mostly positioning things absolutely to lay over each other */
 .toggle-icons .icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   transition: opacity .25s ease-in;
 }
 
-/* set the icon we want to show by default */
-.toggle-icons .icon-default { opacity: 1.0; }
+.icon-default { opacity: 1.0; }
 
-/* set the icon we want to only show on hover or focus to be hidden by default */
-.toggle-icons .icon-hover { opacity: 0; }
+.icon-hover { opacity: 0; }
 
-/* hover states flip the opacity values and thus display our hover-only icon */
-.toggle-icons:hover .icon-default,
-.toggle-icons:focus .icon-default {
-  opacity: 0;
-}
+.toggle-icons:hover .icon-default { opacity: 0; }
 
-.toggle-icons:hover .icon-hover,
-.toggle-icons:focus .icon-hover {
-  opacity: 1.0;
-}
-
-.toggle-icons { color: inherit; }
-
-.toggle-icons:not(:last-child) { margin-right: .25rem; }
+.toggle-icons:hover .icon-hover { opacity: 1.0; }
 
 /* Media Queries Original
 ---------------------------------------------------------- */
