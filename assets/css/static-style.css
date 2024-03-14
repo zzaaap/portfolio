@@ -27,7 +27,7 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 .hov-be:hover { color: #1769FF; }
 .hov-ig:hover { color: #E1306C; }
 .hov-li:hover { color: #0A66C2; }
-.hov-gh:hover { color: #6E5494; }
+.hov-gh:hover { color: #653AC1; }
 
 .icon-default { transition: opacity .3s, transform .3s; }
 
