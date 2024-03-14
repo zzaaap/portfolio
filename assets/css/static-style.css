@@ -331,12 +331,6 @@ textarea.input:focus {
 
 /* Test
 ---------------------------------------------------------- */
-.hov-em:hover { color: #FFD43B; }
-.hov-be:hover { color: #1769FF; }
-.hov-ig:hover { color: #E1306C; }
-.hov-li:hover { color: #0A66C2; }
-.hov-gh:hover { color: #653AC1; }
-
 .social-icons {
   display: flex;
   justify-content: center;
@@ -345,6 +339,7 @@ textarea.input:focus {
 }
 
 .social-icons a {
+  position: relative; /* Add this line */
   width: 45px;
   height: 45px;
   border-radius: 10px;
@@ -385,6 +380,12 @@ textarea.input:focus {
 .toggle-icons { color: inherit; }
 
 .toggle-icons:not(:last-child) { margin-right: .25rem; }
+
+.hov-em .icon-hover { color: #FFD43B; }
+.hov-be .icon-hover { color: #1769FF; }
+.hov-ig .icon-hover { color: #E1306C; }
+.hov-li .icon-hover { color: #0A66C2; }
+.hov-gh .icon-hover { color: #653AC1; }
 
 /* Media Queries Original
 ---------------------------------------------------------- */
