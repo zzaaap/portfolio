@@ -345,7 +345,6 @@ textarea.input:focus {
 }
 
 .social-icons a {
-  position: relative; /* Add this line */
   width: 45px;
   height: 45px;
   border-radius: 10px;
@@ -359,17 +358,33 @@ textarea.input:focus {
   margin-top: -10px;
 }
 
+.toggle-icons { display: block; position: relative; }
+
 .toggle-icons .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: opacity .25s ease-in;
 }
 
-.icon-default { opacity: 1.0; }
+.toggle-icons .icon-default { opacity: 1.0; }
 
-.icon-hover { opacity: 0; }
+.toggle-icons .icon-hover { opacity: 0; }
 
-.toggle-icons:hover .icon-default { opacity: 0; }
+.toggle-icons:hover .icon-default,
+.toggle-icons:focus .icon-default {
+  opacity: 0;
+}
 
-.toggle-icons:hover .icon-hover { opacity: 1.0; }
+.toggle-icons:hover .icon-hover,
+.toggle-icons:focus .icon-hover {
+  opacity: 1.0;
+}
+
+.toggle-icons { color: inherit; }
+
+.toggle-icons:not(:last-child) { margin-right: .25rem; }
 
 /* Media Queries Original
 ---------------------------------------------------------- */
