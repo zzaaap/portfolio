@@ -387,6 +387,14 @@ textarea.input:focus {
 .hov-li .icon-hover { color: #0A66C2; }
 .hov-gh .icon-hover { color: #653AC1; }
 
+.weather-status .icon-default {
+  color: rgb(112, 72, 232);
+}
+
+.weather-status .icon-hover {
+  color: rgb(255, 146, 43);
+}
+
 /* Media Queries Original
 ---------------------------------------------------------- */
 @media (max-width: 850px) {
