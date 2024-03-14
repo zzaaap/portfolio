@@ -11,8 +11,6 @@
 
 a { text-decoration: none; color: inherit; }
 
-.logo { fill: #000000; }
-
 body {
   font: 24px/1.5 "Titillium+Web", sans-serif, "400";
   display: flex;
@@ -23,6 +21,15 @@ body {
 
 h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align: left; }
 
+.logo { fill: #000000; }
+
+.hov-em:hover { color: #FFD43B; }
+.hov-be:hover { color: #1769FF; }
+.hov-ig:hover { color: #E1306C; }
+.hov-li:hover { color: #0A66C2; }
+.hov-gh:hover { color: #653AC1; }
+
+.icon-default { transition: opacity .3s, transform .3s; }
 
 /* Dark/Light Mode */
 @media (prefers-color-scheme: light) {
@@ -190,7 +197,6 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 
   .btn-close { right: 5px; }
 }
-
 
 
 /* Contact Form
@@ -381,3 +387,32 @@ textarea.input:focus {
   .input { padding: 0.45rem 1.2rem; }
   .btn { padding: 0.45rem 1.2rem; }
 }
+
+/* Test
+---------------------------------------------------------- */
+/* this is the link or the element that will contain the two icons we want to toggle between */
+.toggle-icons { display: block; position: relative; }
+
+/* general styling for both icons - mostly positioning things absolutely to lay over each other */
+.toggle-icons .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: opacity .25s ease-in;
+}
+
+/* set the icon we want to show by default */
+.toggle-icons .icon-default { opacity: 1.0; }
+
+/* set the icon we want to only show on hover or focus to be hidden by default */
+.toggle-icons .icon-hover { opacity: 0; }
+
+/* hover states flip the opacity values and thus display our hover-only icon */
+.toggle-icons:hover .icon-default, .toggle-icons:focus .icon-default { opacity: 0; }
+
+.toggle-icons:hover .icon-hover, .toggle-icons:focus .icon-hover { opacity: 1.0; }
+
+.toggle-icons { color: inherit; }
+
+.toggle-icons:not(:last-child) { margin-right: .25rem; }
