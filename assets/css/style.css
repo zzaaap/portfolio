@@ -1,36 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
-
 :root {
   --bg-color: #FFFFFF;
   --text-color: #202124;
   --gray-color: #EDEEF1;
-  --h1-color: #22D68E;
+  --h1-color: #FF3131;
 }
 
-* { padding: 0; margin: 0; }
+* { padding: 0; margin: 0; font: Titillium Web, sans-serif, "400", "200|300|400|600|700|900"; }
 
 a { text-decoration: none; color: inherit; }
 
 body {
-  font: 24px/1.5 "Titillium+Web", sans-serif, "400";
+  font: 24px/1.5 "Titillium Web", sans-serif, "400";
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-h1 { color: var(--text-color); font-weight: 500; }
-h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align: left; }
+h1 { color: var(--text-color); font-size: 2rem;  font-weight: 700; line-height: 1; margin-bottom: 0.7rem; }
+h5 { color: var(--text-color); font-size: .85rem; font-weight: 400; text-align: left; margin-top: 3.5rem; opacity: .35; }
 
-.logo { fill: #000000; }
-
-/* Dark/Light Mode */
+/* Dark/Light Automatic Mode
+--------------------------------------------------------------------------- */
 @media (prefers-color-scheme: light) {
   :root {
     --bg-color: #FFFFFF;
     --text-color: #202124;
     --gray-color: #EDEEF1;
-    --h1-color: #22D68E;
+    --h1-color: #BDC0C3;
   }
   .logo{ fill: #000000; }
 }
@@ -39,12 +36,12 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
     --bg-color: #202124;
     --text-color: #BDC0C3;
     --gray-color: #28292C;
-    --h1-color: #00FF99;
+    --h1-color: #009900;
   }
   .logo{ fill: #FFFFFF; }
 }
 
-/* Alignment Container */
+/* Alignment Container - Main */
 .container {
   display: grid;
   grid-template-columns: .25fr .5fr .25fr;
@@ -62,7 +59,8 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
   width: 100%;
   height: 100vh;
 }
-/* Logo Container*/
+
+/* Logo Container - Main */
 .logo-cell {
   align-items: center;
   justify-content: center;
@@ -72,8 +70,8 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 }
 
 
-/* Hover Resize SVG
--------------------------------------------------- */
+/* Resize SVG on hover
+--------------------------------------------------------------------------- */
 #logobutton {
   height: 100px;
   width: 275px;
@@ -90,50 +88,8 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 }
 
 
-/* Button Action
--------------------------------------------------- */
-.btn-close {
-  cursor: pointer;
-  position: relative;
-  right: -5px;
-  top: 10px;
-  margin: 0;
-  padding: 10px;
-  width: 15px;
-  height: 15px;
-  float: right;
-  background-color: var(--gray-color);
-  border-radius: 20px;
-}
-
-.clear { clear: both; }
-
-.btn-close::before,
-.btn-close::after {
-  content: "";
-  height: 2px;
-  display: block;
-  background: var(--text-color);
-}
-
-.btn-close::before {
-  margin-top: 7px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.btn-close::after {
-  margin-top: -2px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.btn-close:hover:after, .btn-close:hover:before { background: var(--h1-color); }
-
+/* Button action to open contact form pop-up
+--------------------------------------------------------------------------- */
 .modal-wrapper {
   display: flex;
   z-index: 999;
@@ -186,15 +142,9 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 
 .content { text-align: center; }
 
-@media screen and (max-width: 425px) { .modal { width: 100%; height: 70%; padding: 0; }
-
-  .btn-close { right: 5px; }
-}
-
 
 /* Contact Form
----------------------------------------------------------- */
-
+--------------------------------------------------------------------------- */
 .form {
   width: 100%;
   max-width: 100%;
@@ -213,20 +163,12 @@ form {
   position: relative;
 }
 
-.title {
-  color: var(--text-color);
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1;
-  margin-bottom: 0.7rem;
-}
-
 .input-container { position: relative; margin: 1rem 0; }
 
 .input {
   width: 100%;
   outline: none;
-  border: 1px solid var(--gray-color);
+  border: 1px solid var(--bg-color);
   background-color: var(--bg-color);
   padding: 0.6rem 1.2rem;
   color: var(--text-color);
@@ -239,7 +181,7 @@ form {
 input:focus {
   border: 1px dashed var(--h1-color);
 }
-
+/* textarea controls the Message input box */
 textarea.input {
   padding: 0.8rem 1.2rem;
   min-height: 250px;
@@ -257,6 +199,7 @@ textarea.input:focus {
   border: 1px dashed var(--h1-color);
 }
 
+/* Position the labels above the input fields */
 .input-container label {
   position: absolute;
   top: 50%;
@@ -271,8 +214,100 @@ textarea.input:focus {
   transition: 0.25s;
 }
 
+/* Position the labels above the input fields on focus */
 .input-container.textarea label { top: 1rem; transform: translateY(0); }
 
+/* Container for the input field with a positioned span element */
+.input-container span {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  padding: 1rem;
+  color: transparent;
+  pointer-events: none;
+  z-index: 500;
+}
+
+/* Pseudo-elements before and after the span for visual effects */
+.input-container span:before,
+.input-container span:after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: 0.2s;
+  height: 18px;
+  background-color: var(--bg-color);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px 5px 0 0px;
+  border-top: 1px dashed var(--h1-color);
+}
+
+/* Position the :before pseudo-element to the left */
+.input-container span:before {
+  left: 50%;
+  border-radius: 0 5px 0 0;
+}
+
+/* Position the :after pseudo-element to the right */
+.input-container span:after {
+  right: 50%;
+  border-radius: 5px 0 0 0;
+}
+
+/* Style changes when the input container is focused */
+.input-container.focus label {
+  top: 0;
+  transform: translateY(-50%);
+  left: 25px;
+  font-size: 0.8rem;
+}
+
+/* Expand the before and after pseudo-elements upon focus */
+.input-container.focus span:before,
+.input-container.focus span:after {
+  width: 50%;
+  opacity: 1;
+}
+
+/* The main container for contact information */
+.contact-info {
+  padding: 1.2rem 2.2rem;
+  position: relative;
+}
+
+/* Styling for the title within the contact information */
+.contact-info .title {
+  margin-bottom: 0.7rem;
+  text-align: left;
+}
+
+/* Styling for the text within the contact information */
+.text {
+  color: var(--text-color);
+  margin: 1.5rem 0 2rem 0;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Close button */
+.btn-close {
+  cursor: pointer;
+  position: relative;
+  right: -3px;
+  top: 3px;
+  margin: 0;
+  padding: 10px;
+  width: 15px;
+  height: 15px;
+  float: right;
+}
+
+.clear { clear: both; }
+
+/* Form - Send Button */
 .btn {
   padding: 0.6rem 1.3rem;
   background-color: var(--text-color);
@@ -291,13 +326,15 @@ textarea.input:focus {
 
 .btn:hover { background-color: transparent; color: var(--text-color); }
 
+
 /* Social Media Icons
----------------------------------------------------------- */
-.hov-em:hover { color: #f2af1e; }
+--------------------------------------------------------------------------- */
+.hov-em:hover { color: #F2AF1E; }
 .hov-be:hover { color: #1769FF; }
 .hov-ig:hover { color: #E1306C; }
 .hov-li:hover { color: #0A66C2; }
-.hov-gh:hover { color: #692dec; }
+.hov-gh:hover { color: #692DEC; }
+.hov-x:hover { color: #FF3131; }
 
 .icon { width: 28px; margin-right: 0.7rem; }
 
@@ -323,48 +360,11 @@ textarea.input:focus {
   transition: 0.125s;
 }
 
-.social-icons a:hover { transform: scale(1.1); margin-top: -5px; }
+.social-icons a:hover { transform: scale(1.05); margin-top: -3px; }
 
-.input-container span {
-  position: absolute;
-  top: 0;
-  left: 25px;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  padding: 0 0.4rem;
-  color: transparent;
-  pointer-events: none;
-  z-index: 500;
-}
 
-.input-container span:before,
-.input-container span:after {
-  content: "";
-  position: absolute;
-  width: 10%;
-  opacity: 0;
-  transition: 0.2s;
-  height: 5px;
-  background-color: var(--bg-color);
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.input-container span:before { left: 50%; }
-
-.input-container span:after { right: 50%; }
-
-.input-container.focus label { top: 0; transform: translateY(-50%); left: 25px; font-size: 0.8rem; }
-
-.input-container.focus span:before,
-.input-container.focus span:after { width: 50%; opacity: 1; }
-
-.contact-info { padding: 2.3rem 2.2rem; position: relative; }
-
-.contact-info .title { color: var(--text-color); text-align: left; }
-
-.text { color: var(--text-color); margin: 1.5rem 0 2rem 0; font-size: 1.1rem; text-align: left; }
-
+/* Media Queries
+--------------------------------------------------------------------------- */
 @media (max-width: 850px) {
   .form { grid-template-columns: 1fr; }
   .contact-info:before { bottom: initial; top: -75px; right: 65px; transform: scale(0.95); }
@@ -381,4 +381,7 @@ textarea.input:focus {
   .social-icons a { width: 30px; height: 30px; line-height: 30px; }
   .input { padding: 0.45rem 1.2rem; }
   .btn { padding: 0.45rem 1.2rem; }
+  /* Added from pop-up animation */
+  .modal { width: 100%; height: 70%; padding: 0; }
+  .btn-close { right: 5px; }
 }
