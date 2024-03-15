@@ -197,7 +197,7 @@ h5 { color: var(--text-color); font-size: 0.85rem; font-weight: 300; text-align:
 
 .form {
   width: 100%;
-  max-width: 950px;
+  max-width: 100%;
   z-index: 1000;
   overflow: hidden;
   display: grid;
