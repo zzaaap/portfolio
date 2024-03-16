@@ -36,7 +36,7 @@ h5 { color: var(--text-color); font-size: .85rem; font-weight: 400; text-align: 
     --bg-color: #202124;
     --text-color: #BDC0C3;
     --gray-color: #28292C;
-    --h1-color: #009900;
+    --h1-color: #00FFAA;
   }
   .logo{ fill: #FFFFFF; }
 }
@@ -383,5 +383,4 @@ textarea.input:focus {
   .btn { padding: 0.45rem 1.2rem; }
   /* Added from pop-up animation */
   .modal { width: 100%; height: 70%; padding: 0; }
-  .btn-close { right: 5px; }
 }
