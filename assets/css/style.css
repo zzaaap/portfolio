@@ -108,6 +108,7 @@ h5 { color: var(--text-color); font-size: .95rem; font-weight: 400; text-align: 
   visibility: visible;
   opacity: 1;
   filter: alpha(opacity=1);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .modal {
@@ -139,7 +140,7 @@ h5 { color: var(--text-color); font-size: .95rem; font-weight: 400; text-align: 
 form {
   position: relative;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   z-index: 10;
 }
 
@@ -312,7 +313,7 @@ textarea.input:focus {
   cursor: pointer;
   position: relative;
   right: 10px;
-  top: 3px;
+  top: 5px;
   margin: 0;
   padding: 10px;
   width: 15px;
