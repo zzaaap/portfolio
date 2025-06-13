@@ -1,2 +1,2 @@
 # portfolio
-Online portfolio build for Bazzy
+Online portfolio
